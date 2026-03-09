@@ -1,0 +1,117 @@
+/* Configuración de Simetría Base */
+:root {
+  --poke-red: #FF0000;
+  --poke-dark-grey: #333333;
+  --poke-light-grey: #f4f4f4;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --border-radius: 8px; /* Redondeado mate profesional */
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Evita que el padding rompa las medidas */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--poke-light-grey);
+  min-height: 100vh;
+}
+
+.main-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+  flex: 1; /* Esto empuja el footer hacia abajo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido si la página está vacía */
+}
+
+/* Estilo unificado para Botones Mate */
+.btn-primary {
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--poke-red);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02); /* Animación sutil, no invasiva */
+}
+
+/* Efecto Glassmorphism para Paneles */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px); /* El desenfoque que acordamos */
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--poke-dark-grey);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--poke-red);
+}
+
+/* Estilo para la Navbar sticky */
+nav.glass-panel {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: var(--poke-red);
+}
+
+select.input-field {
+  cursor: pointer;
+  background-color: white;
+}
+
+/* Animaciones de Transición */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efecto Flotante para el Logo de la Landing */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}

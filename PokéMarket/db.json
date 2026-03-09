@@ -1,0 +1,187 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "josue07",
+      "email": "admin@pokemarket.com",
+      "password": "admin",
+      "role": "admin",
+      "gender": "male",
+      "isSuperAdmin": true,
+      "inventory": [],
+      "wishlist": [],
+      "lastPurchase": {
+        "date": "",
+        "items": []
+      }
+    },
+    {
+      "id": "b5f5",
+      "username": "Mushi07",
+      "email": "jozuevarela14@gmail.com",
+      "password": "loveisall",
+      "gender": "male",
+      "role": "admin",
+      "isSuperAdmin": false,
+      "inventory": [
+        {
+          "id": 1,
+          "name": "master-ball",
+          "cost": 500,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
+          "isLocal": false,
+          "qty": 1
+        },
+        {
+          "id": "local-1772739921818",
+          "name": "fist-plate",
+          "cost": 1000,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png",
+          "isLocal": true,
+          "qty": 2
+        },
+        {
+          "id": 3,
+          "name": "great-ball",
+          "cost": 600,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/great-ball.png",
+          "isLocal": false,
+          "qty": 1
+        },
+        {
+          "id": 6,
+          "name": "net-ball",
+          "cost": 1000,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/net-ball.png",
+          "isLocal": false,
+          "qty": 1
+        },
+        {
+          "id": 1,
+          "name": "master-ball",
+          "cost": 500,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
+          "isLocal": false,
+          "qty": 1
+        }
+      ],
+      "wishlist": [
+        {
+          "id": 1,
+          "name": "master-ball",
+          "cost": 500,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
+          "isLocal": false
+        },
+        {
+          "id": 3,
+          "name": "great-ball",
+          "cost": 600,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/great-ball.png",
+          "isLocal": false
+        },
+        {
+          "id": "local-1772739921818",
+          "name": "fist-plate",
+          "cost": 1000,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png",
+          "isLocal": true
+        }
+      ],
+      "lastPurchase": {
+        "date": "6/3/2026",
+        "items": [
+          {
+            "name": "master-ball",
+            "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
+            "cost": 500
+          }
+        ]
+      }
+    },
+    {
+      "id": "cc71",
+      "username": "Miss",
+      "email": "miss1@gmail.com",
+      "password": "loveisall",
+      "gender": "female",
+      "role": "cliente",
+      "inventory": [],
+      "wishlist": [],
+      "lastPurchase": {
+        "date": "",
+        "items": []
+      }
+    },
+    {
+      "id": "7fe8",
+      "username": "JZ",
+      "email": "jozuevarela@gmail.com",
+      "password": "loveisall",
+      "gender": "male",
+      "role": "cliente",
+      "inventory": [],
+      "wishlist": []
+    },
+    {
+      "id": "11b0",
+      "username": "Mike",
+      "email": "jozue@gmail.com",
+      "password": "loveisall",
+      "gender": "female",
+      "role": "cliente",
+      "inventory": [
+        {
+          "id": "local-1772739921818",
+          "name": "fist-plate",
+          "cost": 1000,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png",
+          "isLocal": true,
+          "qty": 2
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "local-1772739921818",
+          "name": "fist-plate",
+          "cost": 1000,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png",
+          "isLocal": true
+        }
+      ],
+      "lastPurchase": {
+        "date": "6/3/2026",
+        "items": [
+          {
+            "name": "fist-plate",
+            "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png",
+            "cost": 1000
+          }
+        ]
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "1772739921818",
+      "name": "fist-plate",
+      "price": "1000",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "standard-balls"
+    },
+    {
+      "id": "2",
+      "name": "healing"
+    },
+    {
+      "id": "3",
+      "name": "status-cures"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

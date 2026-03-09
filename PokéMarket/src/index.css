@@ -1,0 +1,83 @@
+:root {
+  --poke-red: #FF0000;
+  --poke-dark-grey: #333333;
+  --poke-light-grey: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--poke-light-grey);
+  color: var(--poke-dark-grey);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🏛️ Restauración de la Tarjeta Profesional */
+.auth-card, .glass-panel {
+  background: white !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+  border: 1px solid #eee !important;
+}
+
+/* 🏛️ Estética de Inputs unificada */
+.input-group {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: var(--poke-red);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.05);
+}
+
+.input-group input {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  width: 100%;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.btn-primary {
+  background: var(--poke-red);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
