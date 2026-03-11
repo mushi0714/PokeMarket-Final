@@ -202,6 +202,26 @@
           }
         ]
       }
+    },
+    {
+      "id": "c2d5",
+      "username": "MushiAdmi",
+      "email": "josuemushi1@gmail.com",
+      "password": "loveisall123",
+      "gender": "male",
+      "role": "cliente",
+      "inventory": [],
+      "wishlist": []
+    },
+    {
+      "id": "647c",
+      "username": "MushiAdmi",
+      "email": "ash14@gmail.com",
+      "password": "loveisall123",
+      "gender": "female",
+      "role": "cliente",
+      "inventory": [],
+      "wishlist": []
     }
   ],
   "products": [

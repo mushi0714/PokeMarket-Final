@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 import { ShoppingCart, Search, Star, Trash2, Heart } from 'lucide-react';
-
-// Ahora esta ruta funcionará sin extensiones y sin errores rojos
 import { useAuth } from '../../context/AuthContext';
 
-// PASO 1: Interfaz para los productos del mercado
 interface PokemonProduct {
   id: string | number;
   name: string;
@@ -16,11 +13,8 @@ interface PokemonProduct {
 }
 
 const PokeMarket: React.FC = () => {
-  // AJUSTE CLAVE: Le decimos a TS qué esperar de useAuth para quitar el rojo
-  const { user, login } = useAuth() as { 
-    user: any; 
-    login: (userData: any) => void 
-  };
+  // Simplificado: useAuth ya sabe que devuelve user, login, etc.
+  const { user } = useAuth();
   
   const [items, setItems] = useState<PokemonProduct[]>([]);
   const [cart, setCart] = useState<PokemonProduct[]>([]);

@@ -12,17 +12,31 @@ const LoginCard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // 🏛️ Validación única contra db.json
+      // 🏛️ Validación contra db.json
       const res = await fetch(`http://localhost:3000/users?email=${formData.email}&password=${formData.password}`);
       const users = await res.json();
       
       if (users && users.length > 0) {
-        login(users[0]);
+        const foundUser = users[0];
+
+        // Estructuramos los datos para que coincidan con la interfaz de AuthContext
+        const userData = {
+          ...foundUser,
+          name: foundUser.username || foundUser.name, 
+          role: foundUser.role || 'cliente' // Por defecto cliente si no existe en DB
+        };
+
+        // CAMBIO CLAVE: Enviamos el usuario Y el token simulado
+        const fakeToken = "pk_token_" + foundUser.id + Math.random().toString(36).substring(7);
+        login(userData, fakeToken); 
+
         toast("Access Granted!", {
-          description: `Welcome back, ${users[0].username}`,
-          icon: <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" width="20" />
+          description: `Welcome back, ${userData.name}`,
+          icon: <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" width="20" alt="poke" />
         });
-        navigate('/profile');
+
+        // Redirigimos al Market después de un login exitoso
+        navigate('/market'); 
       } else {
         toast.error("Invalid credentials. Try again.");
       }

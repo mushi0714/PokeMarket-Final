@@ -19,17 +19,44 @@ function App() {
           <Navbar />
           <main style={{ flex: 1 }} className="main-container fade-in">
             <Routes>
+              {/* Rutas Públicas */}
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<LoginCard />} />
               <Route path="/register" element={<RegisterCard />} />
-              <Route path="/profile" element={<ProtectedRoute><TrainerCard /></ProtectedRoute>} />
-              <Route path="/market" element={<ProtectedRoute><PokeMarket /></ProtectedRoute>} />
-              <Route path="/admin" element={<ProtectedRoute adminOnly={true}><AdminDashboard /></ProtectedRoute>} />
+
+              {/* Rutas Protegidas - Cliente */}
+              <Route 
+                path="/profile" 
+                element={
+                  <ProtectedRoute>
+                    <TrainerCard />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/market" 
+                element={
+                  <ProtectedRoute>
+                    <PokeMarket />
+                  </ProtectedRoute>
+                } 
+              />
+
+              {/* Ruta Protegida - Administrador */}
+              <Route 
+                path="/admin" 
+                element={
+                  <ProtectedRoute adminOnly={true}>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                } 
+              />
+
+              {/* Redirección por defecto */}
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </main>
           <Footer />
-          {/* Toaster limpio para evitar superposiciones de Meowth */}
           <Toaster position="bottom-right" richColors={false} closeButton />
         </div>
       </Router>

@@ -5,20 +5,20 @@ interface User {
   id: string | number;
   name: string;
   email?: string;
+  role: 'admin' | 'cliente'; // Mantenemos el rol para la validación
   wishlist?: any[];
   inventory?: any[];
-  // Agrega aquí otros campos que uses de tu DB (ej: lastPurchase)
 }
 
-// 2. Definimos qué funciones y datos ofrece el Contexto
+// 2. Definimos qué funciones y datos ofrece el Contexto (Añadimos token)
 interface AuthContextType {
   user: User | null;
+  token: string | null; // <--- Nueva propiedad
   loading: boolean;
-  login: (userData: User) => void;
+  login: (userData: User, token: string) => void; // <--- Ahora recibe el token
   logout: () => void;
 }
 
-// 3. Inicializamos el contexto con un valor nulo pero con el tipo correcto
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 interface AuthProviderProps {
@@ -27,38 +27,47 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [token, setToken] = useState<string | null>(null); // <--- Estado del token
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const savedUser = localStorage.getItem('pokeUser');
-    if (savedUser) {
+    const savedToken = localStorage.getItem('pokeToken'); // <--- Recuperamos token
+
+    if (savedUser && savedToken) {
       try {
         setUser(JSON.parse(savedUser));
+        setToken(savedToken);
       } catch (error) {
-        console.error("Error parsing user from localStorage", error);
+        console.error("Error parsing auth data from localStorage", error);
+        localStorage.removeItem('pokeUser');
+        localStorage.removeItem('pokeToken');
       }
     }
     setLoading(false);
   }, []);
 
-  const login = (userData: User) => {
+  const login = (userData: User, tokenData: string) => {
     setUser(userData);
+    setToken(tokenData);
     localStorage.setItem('pokeUser', JSON.stringify(userData));
+    localStorage.setItem('pokeToken', tokenData); // <--- Guardamos token
   };
 
   const logout = () => {
     setUser(null);
+    setToken(null);
     localStorage.removeItem('pokeUser');
+    localStorage.removeItem('pokeToken');
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>
+    <AuthContext.Provider value={{ user, token, login, logout, loading }}>
       {!loading && children}
     </AuthContext.Provider>
   );
 };
 
-// 4. Hook personalizado con validación de seguridad
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
