@@ -63,16 +63,33 @@
           "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
           "isLocal": false,
           "qty": 1
-        }
-      ],
-      "wishlist": [
+        },
         {
           "id": 1,
           "name": "master-ball",
           "cost": 500,
           "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
-          "isLocal": false
+          "isLocal": false,
+          "qty": 1
         },
+        {
+          "id": 1,
+          "name": "master-ball",
+          "cost": 500,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
+          "isLocal": false,
+          "qty": 1
+        },
+        {
+          "id": "local-1772739921818",
+          "name": "fist-plate",
+          "cost": 1000,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png",
+          "isLocal": true,
+          "qty": 1
+        }
+      ],
+      "wishlist": [
         {
           "id": 3,
           "name": "great-ball",
@@ -86,15 +103,41 @@
           "cost": 1000,
           "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png",
           "isLocal": true
+        },
+        {
+          "id": 1,
+          "name": "master-ball",
+          "cost": 500,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
+          "isLocal": false
+        },
+        {
+          "id": 6,
+          "name": "net-ball",
+          "cost": 1000,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/net-ball.png",
+          "isLocal": false
+        },
+        {
+          "id": 7,
+          "name": "dive-ball",
+          "cost": 1000,
+          "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dive-ball.png",
+          "isLocal": false
         }
       ],
       "lastPurchase": {
-        "date": "6/3/2026",
+        "date": "10/3/2026",
         "items": [
           {
             "name": "master-ball",
             "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png",
             "cost": 500
+          },
+          {
+            "name": "fist-plate",
+            "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fist-plate.png",
+            "cost": 1000
           }
         ]
       }
